@@ -1,11 +1,9 @@
-env:
-  DOCKER_IMAGE_NAME: ilhamalic-azure-ttt
-  IMAGE_REGISTRY_URL: docker.pkg.github.com
-  #################################################
-  ### USER PROVIDED VALUES ARE REQUIRED BELOW   ###
-  #################################################
-  #################################################
-  ### REPLACE USERNAME WITH GH USERNAME         ###
-  AZURE_WEBAPP_NAME: ilhamalic-ttt-app
-  #################################################
+name: Stage the app
 
+on: 
+  pull_request:
+    types: [labeled]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
